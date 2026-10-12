@@ -9,9 +9,9 @@
 <meta name="theme-color" content="#fbf3ea">
 <meta property="og:title" content="Carecipe – Cook Caribbean tonight">
 <meta property="og:description" content="1,322 dishes from 22 islands. Show it your fridge, it tells you what you can cook.">
-<meta property="og:image" content="https://forwardonlyjhaye.github.io/carecipe-legal/app/assets/og.jpg">
-<link rel="canonical" href="https://forwardonlyjhaye.github.io/carecipe-legal/app/">
-<meta property="og:url" content="https://forwardonlyjhaye.github.io/carecipe-legal/app/">
+<meta property="og:image" content="https://carecipe.forwardonlyllc.com/app/assets/og.jpg">
+<link rel="canonical" href="https://carecipe.forwardonlyllc.com/">
+<meta property="og:url" content="https://carecipe.forwardonlyllc.com/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,15 +53,16 @@ h1 em{font-style:normal;color:var(--accent)}
 .android-note{margin-top:12px;font-size:14px;color:var(--muted)}
 
 .stage{position:relative;height:clamp(450px,122vw,680px);margin:30px -20px 0;overflow:hidden}
-.stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;z-index:5;background:linear-gradient(transparent,var(--page))}
+.stage{-webkit-mask-image:linear-gradient(#000 calc(100% - 170px),transparent);mask-image:linear-gradient(#000 calc(100% - 170px),transparent)}
 .stage .phone{position:absolute;left:50%;top:17%;--pw:clamp(196px,50vw,300px);transform:translateX(-50%);z-index:3}
 .stage .p1,.stage .p3{--pw:clamp(160px,40vw,262px);top:27%;z-index:1}
 .stage .p1{transform:translateX(-112%) rotate(-7deg)}
 .stage .p3{transform:translateX(12%) rotate(7deg)}
-.orbit{position:absolute;left:50%;top:50%;z-index:2;width:min(94vw,640px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+.stage{--d:min(78vw,600px);--p:clamp(56px,15vw,100px)}
+.orbit{position:absolute;left:50%;top:calc(var(--d) / 2 + var(--p) / 2 + 14px);z-index:2;width:var(--d);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
   border:1.5px dashed rgba(224,122,62,.3);animation:spin 70s linear infinite}
-.orbit img{position:absolute;left:50%;top:50%;width:clamp(62px,16vw,104px);aspect-ratio:1;border-radius:50%;object-fit:cover;
-  transform:translate(-50%,-50%) rotate(var(--a)) translateY(calc(min(94vw,640px) / -2)) rotate(calc(var(--a) * -1));
+.orbit img{position:absolute;left:50%;top:50%;width:var(--p);aspect-ratio:1;border-radius:50%;object-fit:cover;
+  transform:translate(-50%,-50%) rotate(var(--a)) translateY(calc(var(--d) / -2)) rotate(calc(var(--a) * -1));
   box-shadow:0 14px 28px -10px rgba(90,40,10,.55);border:3px solid #fff}
 @keyframes spin{to{rotate:360deg}}
 .float{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:16px;background:#fff;

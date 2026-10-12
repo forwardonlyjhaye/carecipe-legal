@@ -35,10 +35,8 @@ nav a{text-decoration:none;color:var(--ink2)}nav a:hover{color:var(--accent)}
   text-decoration:none;font:600 15px/1 var(--body);box-shadow:0 8px 18px -8px rgba(224,122,62,.8)}
 
 .hero{position:relative;text-align:center;padding:14px 0 0}
-.stage::before{content:"";position:absolute;inset:18% -10% 0;z-index:0;
-  background:radial-gradient(45% 60% at 22% 80%,rgba(240,168,106,.55),transparent 70%),
-             radial-gradient(40% 55% at 80% 85%,rgba(224,122,62,.42),transparent 70%),
-             radial-gradient(35% 40% at 50% 60%,rgba(232,195,157,.5),transparent 70%)}
+.stage::before{content:"";position:absolute;inset:8% 0 0;z-index:0;
+  background:radial-gradient(closest-side at 50% 55%,rgba(240,168,106,.5),rgba(232,195,157,.32) 55%,rgba(251,243,234,0) 100%)}
 .tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:99px;background:#fff;
   border:1px solid var(--line);box-shadow:0 2px 0 var(--line)}
 .tag .kick{font-size:22px}

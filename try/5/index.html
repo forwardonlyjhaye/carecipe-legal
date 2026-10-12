@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Carecipe – Caribbean Recipes</title>
+<meta name="description" content="Saw a recipe on TikTok or Instagram? Tap Share, then Carecipe, and get a clean recipe you can cook from. Plus 1,322 Caribbean dishes. Free on iPhone.">
+<meta name="apple-itunes-app" content="app-id=6810801696">
+<meta name="theme-color" content="#f6efe6">
+<meta property="og:title" content="Carecipe – Saw it on TikTok? Cook it tonight.">
+<meta property="og:description" content="Turn any TikTok, Instagram or YouTube recipe into a clean recipe card. Free on iPhone.">
+<meta property="og:image" content="https://forwardonlyjhaye.github.io/carecipe-legal/try/assets/og.jpg">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kit.css">
+<style>
+/* Recipe Box: the save-from-anywhere story, told as a video becoming a recipe card. */
+:root{--page:#f6efe6;--paper:#fffdf9;--card:#fff;--ink:#2a1a10;--muted:#8a7663;--line:#ecdfcf;--rule:#f0e3d2;
+  --accent:#e07a3e;--accent-deep:#c06a30;--soft:#f0a86a;--flag:#fbe9db;--ok:#4a8f5b;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;--body:'Work Sans',system-ui,sans-serif;--hand:'Caveat',cursive}
+body{background:var(--page);color:var(--ink);font:400 17px/1.55 var(--body)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.kick{font:700 25px/1 var(--hand);color:var(--accent)}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;font:800 22px/1 var(--display);letter-spacing:-.03em;text-decoration:none}
+.logo img{width:34px;height:34px;border-radius:9px}
+.pill{padding:11px 18px;border-radius:99px;background:var(--ink);color:#fff;text-decoration:none;font:600 15px/1 var(--body)}
+
+.hero{display:grid;gap:34px;padding:20px 0 30px;text-align:center}
+h1{font:800 clamp(42px,11vw,82px)/.95 var(--display);letter-spacing:-.05em;margin:12px auto 0;max-width:11ch;text-wrap:balance}
+h1 u{text-decoration:none;background:linear-gradient(transparent 62%,rgba(240,168,106,.55) 62%)}
+.sub{max-width:34ch;margin:16px auto 22px;color:var(--muted);font-size:18px}
+.android-note{margin-top:12px;font-size:14px;color:var(--muted)}
+
+/* Video card turning into a recipe card */
+.flow{position:relative;height:clamp(470px,128vw,560px);max-width:480px;margin:0 auto;width:100%}
+.video{position:absolute;left:0;top:0;width:52%;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#111;transform:rotate(-6deg);
+  box-shadow:0 30px 50px -24px rgba(42,26,16,.6)}
+.video img{width:100%;height:100%;object-fit:cover;opacity:.92}
+.video::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.75))}
+.video p{position:absolute;left:12px;right:12px;bottom:14px;z-index:1;color:#fff;font:600 13px/1.35 var(--body);text-align:left}
+.video p small{display:block;font-weight:500;opacity:.8}
+.video .play{position:absolute;z-index:1;left:50%;top:42%;width:48px;height:48px;margin:-24px;border-radius:50%;background:rgba(255,255,255,.28);backdrop-filter:blur(6px);display:grid;place-items:center}
+.share{position:absolute;z-index:3;left:38%;top:0;display:flex;align-items:center;gap:8px;padding:10px 14px 10px 10px;border-radius:16px;background:var(--card);
+  box-shadow:0 16px 30px -12px rgba(42,26,16,.45);font:600 14px var(--body);animation:bob 3s ease-in-out infinite}
+.share img{width:30px;height:30px;border-radius:8px}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.recipe{position:absolute;right:0;top:12%;width:66%;background:var(--paper);border-radius:6px;padding:22px 18px 18px;text-align:left;transform:rotate(3deg);
+  box-shadow:0 30px 60px -26px rgba(42,26,16,.55),0 1px 0 var(--line);
+  background-image:repeating-linear-gradient(transparent 0 27px,var(--rule) 27px 28px);background-position:0 92px}
+.recipe::before{content:"";position:absolute;top:-12px;left:50%;width:90px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(240,168,106,.55)}
+.recipe .is{font:700 20px/1 var(--hand);color:var(--accent)}
+.recipe h3{font:800 28px/1 var(--display);letter-spacing:-.03em;margin-top:2px}
+.recipe .meta{font:500 12.5px var(--body);color:var(--muted);margin-top:4px}
+.recipe ul{list-style:none;padding:0;margin:14px 0 0;font:500 13.5px/28px var(--body)}
+.recipe li{display:grid;grid-template-columns:62px 1fr;font-variant-numeric:tabular-nums}
+.recipe li b{font-weight:700;color:var(--accent-deep)}
+.recipe .credit{margin-top:8px;font:600 12px var(--body);color:var(--muted)}
+
+section{padding:70px 0}
+.head{max-width:640px;margin:0 auto 34px;text-align:center}
+h2{font:800 clamp(32px,7vw,52px)/1 var(--display);letter-spacing:-.04em;margin-top:6px;text-wrap:balance}
+.head p{color:var(--muted);margin-top:14px;font-size:18px}
+.sources{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.sources span{padding:12px 18px;border-radius:14px;background:var(--card);border:1px solid var(--line);font:600 16px var(--body)}
+.sources span i{font-style:normal;color:var(--accent);margin-right:6px}
+
+.how{display:grid;gap:12px;counter-reset:s}
+.how li{list-style:none;counter-increment:s;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:20px 20px 20px 74px;position:relative}
+.how li::before{content:counter(s);position:absolute;left:20px;top:18px;width:38px;height:38px;border-radius:50%;background:var(--flag);color:var(--accent-deep);
+  display:grid;place-items:center;font:700 26px/1 var(--hand)}
+.how b{display:block;font:800 20px/1.2 var(--display);letter-spacing:-.02em}
+.how p{color:var(--muted);margin-top:4px;font-size:16px}
+
+.box{display:grid;gap:30px;align-items:center}
+.box .phone{--pw:min(270px,66vw);margin:0 auto}
+.box ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.box li{display:flex;gap:12px;align-items:flex-start}
+.box li::before{content:"✓";flex:none;width:28px;height:28px;border-radius:50%;background:#e8f2e6;color:var(--ok);display:grid;place-items:center;font-weight:700}
+.box li span{color:var(--muted)}
+
+.faq{max-width:760px;margin:0 auto;display:grid;gap:10px}
+details{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:0 20px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font:600 17px/1.35 var(--body)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 18px;color:var(--muted)}
+
+.end{background:var(--paper);border:1px solid var(--line);border-radius:32px;text-align:center;padding:56px 22px;
+  background-image:repeating-linear-gradient(transparent 0 35px,var(--rule) 35px 36px)}
+.end p{color:var(--muted);margin:14px auto 24px}
+footer{padding:36px 0 110px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+
+@media (min-width:900px){
+  .hero{grid-template-columns:1fr 1fr;text-align:left;align-items:center;padding-top:40px}
+  .hero h1,.hero .sub{margin-left:0}
+  .hero .badges{justify-content:flex-start}
+  .how{grid-template-columns:repeat(3,1fr)}
+  .box{grid-template-columns:1fr 1fr;gap:60px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top"><img src="../assets/icon.png" alt="">Carecipe</a>
+    <a class="pill" data-store="ios" href="https://apps.apple.com/app/id6810801696">Get the app</a>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <span class="kick">Save from TikTok &amp; Instagram</span>
+        <h1>Saw it on TikTok? <u>Cook it tonight.</u></h1>
+        <p class="sub">Tap Share, then Carecipe. The video becomes a clean recipe card with ingredients, steps and the creator's credit, ready to cook from.</p>
+        <div class="badges" data-hero-cta><a class="badge" data-store="ios" href="https://apps.apple.com/app/id6810801696"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<a class="badge" data-store="android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.5 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.9 8.6 3.3 1.9c.9.5.9 2.4 0 2.9l-3.3 1.9L13.5 12z"/><path fill="#00f076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12.1 6.8-3.4 3.4z"/><path fill="#f83548" d="m13.5 12 3.4 3.4-12.1 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span><em class="soon">Soon</em></a></div>
+        <p class="android-note">On Android? Carecipe is coming to Google Play soon.</p>
+      </div>
+
+      <div class="flow" aria-hidden="true">
+        <div class="video"><img src="../assets/dish/doubles.jpg" alt=""><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M7 4v16l13-8z"/></svg></span>
+          <p>@yourfavouritecook<small>proper Trini doubles, no shortcuts 🔥</small></p></div>
+        <div class="share"><img src="../assets/icon.png" alt="">Share → Carecipe</div>
+        <div class="recipe">
+          <span class="is">Trinidad &amp; Tobago</span>
+          <h3>Doubles</h3>
+          <p class="meta">2 h 10 · serves 6 · from TikTok</p>
+          <ul>
+            <li><b>400 g</b>flour</li><li><b>2 tins</b>chickpeas, drained</li><li><b>2 tbsp</b>curry powder</li>
+            <li><b>1 tsp</b>turmeric</li><li><b>1 tsp</b>geera (cumin)</li><li><b>1 tbsp</b>green seasoning</li><li><b>4</b>garlic cloves</li>
+          </ul>
+          <p class="credit">Credit kept: @yourfavouritecook</p>
+        </div>
+      </div>
+    </div>
+
+    <section style="padding-top:30px">
+      <div class="head reveal"><span class="kick">Works with</span><h2>Wherever you found it</h2></div>
+      <div class="sources reveal"><span><i>▶</i>TikTok</span><span><i>◎</i>Instagram</span><span><i>▶</i>YouTube</span><span><i>↗</i>Any website</span><span><i>✎</i>Grandma's handwritten card</span><span><i>¶</i>Pasted text</span></div>
+    </section>
+
+    <section>
+      <div class="head reveal"><span class="kick">Three taps</span><h2>From scrolling to cooking</h2></div>
+      <ol class="how" style="padding:0;margin:0">
+        <li class="reveal"><b>Tap Share on the post</b><p>Pick Carecipe from the share sheet. No copying, no screenshots.</p></li>
+        <li class="reveal"><b>Carecipe does the reading</b><p>It reads the caption, or listens to the video when the recipe is only said out loud.</p></li>
+        <li class="reveal"><b>Check it, save it, cook it</b><p>Every line is tappable to fix. Then cook it step by step with timers built in.</p></li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="box">
+        <div class="phone reveal"><img src="../assets/screens/02-recipes.jpg" alt="Saved recipes in Carecipe"></div>
+        <div class="reveal">
+          <span class="kick">Your recipe box</span>
+          <h2>All your recipes in one place, next to 1,322 classics</h2>
+          <ul>
+            <li><p><b>Search everything you've saved</b><br><span>"Jerk chicken", "under 30 minutes", "never cooked".</span></p></li>
+            <li><p><b>Quantities that scale</b><br><span>Cooking for two or for twelve, every amount adjusts.</span></p></li>
+            <li><p><b>A real Caribbean catalogue too</b><br><span>Dishes from 22 islands, each checked by a Caribbean cook.</span></p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="head reveal"><h2>Questions</h2></div>
+      <div class="faq reveal">
+        <details><summary>Is Carecipe free?</summary><p>Yes. 200 recipes and 15 AI actions a month for imports, scans and searches. Carecipe Plus opens all 1,322 recipes and lifts the cap, with a 7-day free trial. Cancel any time.</p></details>
+        <details><summary>What if the video never writes the recipe down?</summary><p>Carecipe listens to the video and pulls the recipe from what's said. You can fix any line before saving.</p></details>
+        <details><summary>Do creators get credit?</summary><p>Yes. The creator's name and a link back stay on every recipe you save.</p></details>
+        <details><summary>Is it on Android?</summary><p>On iPhone now, and coming to Google Play soon.</p></details>
+      </div>
+    </section>
+
+    <section data-end-cta>
+      <div class="end reveal">
+        <span class="kick">Stop losing recipes in your saves</span>
+        <h2>Keep every recipe you love</h2>
+        <p>Free on iPhone. No account, no ads.</p>
+        <div class="badges"><a class="badge" data-store="ios" href="https://apps.apple.com/app/id6810801696"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<a class="badge" data-store="android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.5 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.9 8.6 3.3 1.9c.9.5.9 2.4 0 2.9l-3.3 1.9L13.5 12z"/><path fill="#00f076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12.1 6.8-3.4 3.4z"/><path fill="#f83548" d="m13.5 12 3.4 3.4-12.1 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span><em class="soon">Soon</em></a></div>
+      </div>
+    </section>
+  </main>
+  <footer>Carecipe by ForwardOnly LLC · <a href="../../privacy.html">Privacy</a> · <a href="../../terms.html">Terms</a> · <a href="mailto:carecipesupport@forwardonlyllc.com">Support</a></footer>
+</div>
+<div class="stickybar" aria-label="Download Carecipe">
+  <img src="../assets/icon.png" alt=""><p>Carecipe<small>Save recipes from TikTok, free</small></p>
+  <a data-store="auto" href="https://apps.apple.com/app/id6810801696">Get</a>
+</div>
+<script src="../assets/store.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Carecipe – Caribbean Recipes</title>
+<meta name="description" content="What's for dinner? Your fridge already knows. 1,322 Caribbean recipes from 22 islands. Free on iPhone.">
+<meta name="apple-itunes-app" content="app-id=6810801696">
+<meta name="theme-color" content="#171210">
+<meta property="og:title" content="Carecipe – What's for dinner? Your fridge already knows.">
+<meta property="og:description" content="1,322 Caribbean dishes from 22 islands. Free on iPhone.">
+<meta property="og:image" content="https://forwardonlyjhaye.github.io/carecipe-legal/try/assets/og.jpg">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kit.css">
+<style>
+/* Midnight Rum: the app's own dark theme. */
+:root{--page:#171210;--card:#221a16;--card2:#2b211b;--ink:#f6ede2;--muted:#b59d88;--line:#33281f;
+  --accent:#e9a34c;--soft:#f6c99a;--ok:#7fbf8a;--slate:#232a26;--chalk:#f2ede1;--focus:#f6c99a;--bar-bg:rgba(34,26,22,.95);
+  --display:'Bricolage Grotesque',system-ui,sans-serif;--body:'Work Sans',system-ui,sans-serif;--hand:'Caveat',cursive}
+body{background:var(--page);color:var(--ink);font:400 17px/1.55 var(--body)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.kick{font:700 25px/1 var(--hand);color:var(--accent)}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;font:800 23px/1 var(--display);letter-spacing:-.03em;text-decoration:none}
+.logo img{width:36px;height:36px;border-radius:9px}
+.ghost{padding:10px 16px;border-radius:99px;border:1px solid var(--line);text-decoration:none;font:600 15px/1 var(--body);color:var(--soft)}
+
+.hero{text-align:center;padding-top:22px}
+h1{font:800 clamp(42px,11vw,88px)/.95 var(--display);letter-spacing:-.05em;margin:14px auto 0;max-width:11ch;text-wrap:balance}
+h1 span{color:var(--accent)}
+.sub{max-width:33ch;margin:18px auto 24px;color:var(--muted);font-size:18px}
+.badge{background:#f6ede2;color:#171210;border-color:#f6ede2}
+.badge.is-soon{background:transparent;color:var(--ink);border-color:var(--line)}
+.android-note{margin-top:12px;color:var(--muted);font-size:14px}
+
+.sky{position:relative;height:clamp(420px,118vw,640px);margin:34px -20px 0;overflow:hidden}
+.sky::before{content:"";position:absolute;left:50%;top:44%;width:120vw;max-width:900px;aspect-ratio:1;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(233,163,76,.32),rgba(233,163,76,.08) 40%,transparent 66%)}
+.sky::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,var(--page));z-index:4}
+.orbit{position:absolute;left:50%;top:44%;width:min(96vw,620px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  border:1px dashed rgba(246,201,154,.18);animation:spin 80s linear infinite}
+.orbit img{position:absolute;left:50%;top:50%;width:clamp(64px,17vw,104px);aspect-ratio:1;border-radius:50%;object-fit:cover;
+  transform:translate(-50%,-50%) rotate(var(--a)) translateY(calc(min(96vw,620px) / -2)) rotate(calc(var(--a) * -1));
+  box-shadow:0 14px 30px -10px rgba(0,0,0,.7)}
+@keyframes spin{to{rotate:360deg}}
+.sky .phone{position:absolute;left:50%;top:9%;transform:translateX(-50%);--pw:clamp(220px,56vw,300px);z-index:3;
+  box-shadow:0 0 0 1.5px #4a3a2e inset,0 40px 80px -20px rgba(0,0,0,.8),0 0 120px -20px rgba(233,163,76,.35)}
+
+section{padding:72px 0}
+.head{max-width:620px;margin:0 auto 34px;text-align:center}
+h2{font:800 clamp(32px,7vw,54px)/1 var(--display);letter-spacing:-.04em;margin-top:8px;text-wrap:balance}
+.head p{color:var(--muted);margin-top:14px;font-size:18px}
+
+.tiers{display:grid;gap:14px}
+.tier{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:20px}
+.tier h3{display:flex;justify-content:space-between;align-items:baseline;font:800 22px/1.1 var(--display);letter-spacing:-.02em}
+.tier h3 small{font:500 14px var(--body);color:var(--muted)}
+.row{display:flex;gap:14px;align-items:center;margin-top:16px}
+.row img{width:60px;height:60px;border-radius:14px;object-fit:cover}
+.row div{flex:1;min-width:0}
+.row b{display:block;font:600 17px/1.2 var(--body)}
+.row .is{color:var(--soft);font-size:14px}
+.cov{display:flex;align-items:center;gap:10px;margin-top:7px;font:600 13px var(--body);color:var(--muted);font-variant-numeric:tabular-nums}
+.cov i{flex:1;height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+.cov i::before{content:"";display:block;height:100%;width:var(--v);background:var(--ok);border-radius:9px}
+.cov.amber i::before{background:var(--accent)}
+.need{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card2);font-size:14px;color:var(--muted)}
+.need b{display:inline;color:var(--soft);font-size:14px}
+
+.slate{background:var(--slate);border-radius:32px;padding:40px 22px;color:var(--chalk);display:grid;gap:30px;align-items:center}
+.slate .phone{--pw:min(250px,62vw);margin:0 auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.slate .step{font:700 15px var(--body);letter-spacing:.08em;text-transform:uppercase;color:#f6c99a}
+.slate blockquote{margin:12px 0 0;font:600 clamp(26px,6vw,36px)/1.22 var(--display);letter-spacing:-.02em}
+.slate ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px;color:rgba(242,237,225,.72)}
+.slate li::before{content:"— ";color:#f6c99a}
+
+.coming{display:grid;grid-auto-flow:column;grid-auto-columns:min(64%,230px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 14px;scrollbar-width:none}
+.coming::-webkit-scrollbar{display:none}
+.occ{scroll-snap-align:start;border-radius:22px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.occ img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.occ div{padding:14px 16px}
+.occ b{display:block;font:800 19px/1.15 var(--display)}
+.occ small{color:var(--muted);font-size:14px}
+
+.faq{max-width:720px;margin:0 auto;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 2px;font:600 17px/1.35 var(--body)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 2px 20px;color:var(--muted)}
+
+.end{text-align:center;padding:64px 0 40px}
+.end .icon{width:88px;height:88px;border-radius:22px;margin:0 auto 20px;box-shadow:0 0 80px -10px rgba(233,163,76,.6)}
+.end p{color:var(--muted);margin:14px auto 26px}
+footer{padding:20px 0 110px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer a{color:var(--muted)}
+
+@media (min-width:760px){
+  .tiers{grid-template-columns:repeat(3,1fr)}
+  .slate{grid-template-columns:auto 1fr;padding:56px;gap:56px}
+  .coming{grid-auto-columns:230px;margin:0;padding:4px 0 14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top"><img src="../assets/icon.png" alt="">Carecipe</a>
+    <a class="ghost" data-store="ios" href="https://apps.apple.com/app/id6810801696">Get the app</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" style="padding-bottom:0">
+      <span class="kick">Good evening — what's for dinner?</span>
+      <h1>Your fridge <span>already knows</span></h1>
+      <p class="sub">Take a photo of what you've got. Carecipe shows you the Caribbean dishes you can cook tonight, from 1,322 recipes across 22 islands.</p>
+      <div class="badges" data-hero-cta><a class="badge" data-store="ios" href="https://apps.apple.com/app/id6810801696"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<a class="badge" data-store="android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.5 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.9 8.6 3.3 1.9c.9.5.9 2.4 0 2.9l-3.3 1.9L13.5 12z"/><path fill="#00f076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12.1 6.8-3.4 3.4z"/><path fill="#f83548" d="m13.5 12 3.4 3.4-12.1 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span><em class="soon">Soon</em></a></div>
+      <p class="android-note">On Android? Carecipe is coming to Google Play soon.</p>
+      <div class="sky" aria-hidden="true">
+        <div class="orbit">
+          <img src="../assets/dish/ackee.jpg" alt="" style="--a:0deg"><img src="../assets/dish/doubles.jpg" alt="" style="--a:45deg">
+          <img src="../assets/dish/curry-goat.jpg" alt="" style="--a:90deg"><img src="../assets/dish/griot.jpg" alt="" style="--a:135deg">
+          <img src="../assets/dish/oil-down.jpg" alt="" style="--a:180deg"><img src="../assets/dish/escovitch.jpg" alt="" style="--a:225deg">
+          <img src="../assets/dish/pepperpot.jpg" alt="" style="--a:270deg"><img src="../assets/dish/sorrel.jpg" alt="" style="--a:315deg">
+        </div>
+        <div class="phone"><img src="../assets/screens/01-whattocook.jpg" alt=""></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="head reveal"><span class="kick">Made for what you have</span><h2>Dinner, sorted into three piles</h2><p>Every dish is ranked by how much of it you can already make.</p></div>
+      <div class="tiers">
+        <div class="tier reveal"><h3>Cook it tonight <small>you have it all</small></h3>
+          <div class="row"><img src="../assets/dish/ackee.jpg" alt=""><div><b>Ackee &amp; Saltfish</b><span class="is">Jamaica · 40 min</span><div class="cov"><i style="--v:100%"></i>9 of 9</div></div></div>
+          <div class="row"><img src="../assets/dish/rice-peas.jpg" alt=""><div><b>Rice &amp; Peas</b><span class="is">Jamaica · 55 min</span><div class="cov"><i style="--v:100%"></i>9 of 9</div></div></div>
+        </div>
+        <div class="tier reveal"><h3>Almost there <small>missing 1 or 2</small></h3>
+          <div class="row"><img src="../assets/dish/escovitch.jpg" alt=""><div><b>Escovitch Fish</b><span class="is">Jamaica · 45 min</span><div class="cov amber"><i style="--v:89%"></i>8 of 9</div></div></div>
+          <p class="need"><b>Needs</b> vinegar · one tap to your list</p>
+        </div>
+        <div class="tier reveal"><h3>One shop away <small>missing 3+</small></h3>
+          <div class="row"><img src="../assets/dish/oil-down.jpg" alt=""><div><b>Oil Down</b><span class="is">Grenada · 1 h 30</span><div class="cov amber"><i style="--v:56%"></i>5 of 9</div></div></div>
+          <p class="need"><b>Needs</b> breadfruit, salted pigtail, callaloo, coconut milk</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="slate reveal">
+        <div class="phone"><img src="../assets/screens/04-recipe.jpg" alt="A Carecipe recipe ready for cook mode"></div>
+        <div>
+          <span class="step">Cook mode · Step 2 of 9</span>
+          <blockquote>Bloom the curry powder in hot oil first. It's the step people skip, then wonder why it tastes flat.</blockquote>
+          <ul><li>One step at a time, big enough to read from across the kitchen</li><li>Timers built into the steps</li><li>The screen stays on while your hands are full</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="head reveal"><span class="kick">What's coming up</span><h2>Always know what to cook next</h2><p>Carnival, Emancipation Day, Divali, Christmas and every island's Independence Day, with what people cook for each.</p></div>
+      <div class="coming">
+        <article class="occ"><img src="../assets/dish/black-cake.jpg" alt="Black cake" loading="lazy"><div><b>Christmas</b><small>Black cake, sorrel, pepperpot</small></div></article>
+        <article class="occ"><img src="../assets/dish/doubles.jpg" alt="Doubles" loading="lazy"><div><b>Carnival</b><small>Doubles, corn soup, pelau</small></div></article>
+        <article class="occ"><img src="../assets/dish/cou-cou.jpg" alt="Cou-cou and flying fish" loading="lazy"><div><b>Sunday dinner</b><small>Cou-cou, curry goat, mac pie</small></div></article>
+        <article class="occ"><img src="../assets/dish/bake-saltfish.jpg" alt="Bake and saltfish" loading="lazy"><div><b>Breakfast</b><small>Bake &amp; saltfish, ackee</small></div></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="head reveal"><h2>Questions</h2></div>
+      <div class="faq reveal">
+        <details><summary>Is Carecipe free?</summary><p>Yes. 200 recipes and 15 AI actions a month are free. Carecipe Plus opens all 1,322 recipes and lifts the cap, with a 7-day free trial. Cancel any time.</p></details>
+        <details><summary>Do I need an account?</summary><p>No sign-up, no ads. Your recipes stay on your phone.</p></details>
+        <details><summary>Can I save recipes from TikTok and Instagram?</summary><p>Yes. Tap Share, then Carecipe. You get a clean recipe with the creator's credit kept on it.</p></details>
+        <details><summary>Is it on Android?</summary><p>On iPhone now, and coming to Google Play soon.</p></details>
+      </div>
+    </section>
+
+    <section class="end" data-end-cta>
+      <img class="icon" src="../assets/icon.png" alt="">
+      <h2 class="reveal">Open the fridge. Open Carecipe.</h2>
+      <p>Free on iPhone. No account, no ads.</p>
+      <div class="badges"><a class="badge" data-store="ios" href="https://apps.apple.com/app/id6810801696"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<a class="badge" data-store="android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.5 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.9 8.6 3.3 1.9c.9.5.9 2.4 0 2.9l-3.3 1.9L13.5 12z"/><path fill="#00f076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12.1 6.8-3.4 3.4z"/><path fill="#f83548" d="m13.5 12 3.4 3.4-12.1 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span><em class="soon">Soon</em></a></div>
+    </section>
+  </main>
+  <footer>Carecipe by ForwardOnly LLC · <a href="../../privacy.html">Privacy</a> · <a href="../../terms.html">Terms</a> · <a href="mailto:carecipesupport@forwardonlyllc.com">Support</a></footer>
+</div>
+<div class="stickybar" aria-label="Download Carecipe">
+  <img src="../assets/icon.png" alt=""><p>Carecipe<small>Free · Caribbean recipes</small></p>
+  <a data-store="auto" href="https://apps.apple.com/app/id6810801696" style="color:#171210">Get</a>
+</div>
+<script src="../assets/store.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Carecipe – Caribbean Recipes</title>
+<meta name="description" content="Tap what's in your kitchen and see which Caribbean dishes you can cook tonight. 1,322 recipes from 22 islands. Free on iPhone.">
+<meta name="apple-itunes-app" content="app-id=6810801696">
+<meta name="theme-color" content="#fbf3ea">
+<meta property="og:title" content="Carecipe – What can I cook tonight?">
+<meta property="og:description" content="Show it your fridge. It shows you the Caribbean dishes you can make. Free on iPhone.">
+<meta property="og:image" content="https://forwardonlyjhaye.github.io/carecipe-legal/try/assets/og.jpg">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Work+Sans:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kit.css">
+<style>
+/* What to Cook: the app's headline screen, turned into a page you can play with. */
+:root{--page:#fbf3ea;--card:#fff;--surface:#f4ece2;--ink:#2a1a10;--muted:#8a7663;--line:#f0e6d8;--line2:#ecdfcf;
+  --accent:#e07a3e;--accent-deep:#c06a30;--soft:#f0a86a;--flag:#fbe9db;--ok:#4a8f5b;--okbg:#e8f2e6;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;--body:'Work Sans',system-ui,sans-serif;--hand:'Caveat',cursive}
+body{background:var(--page);color:var(--ink);font:400 17px/1.55 var(--body)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.kick{font:700 24px/1 var(--hand);color:var(--accent)}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:flex;align-items:center;gap:10px;font:800 22px/1 var(--display);letter-spacing:-.03em;text-decoration:none}
+.logo img{width:34px;height:34px;border-radius:9px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center}
+
+.hero{display:grid;gap:30px;padding:18px 0 10px}
+h1{font:800 clamp(44px,12vw,84px)/.94 var(--display);letter-spacing:-.05em;margin-top:10px;text-wrap:balance}
+.sub{color:var(--muted);font-size:18px;margin:16px 0 22px;max-width:34ch}
+.hero .badges{justify-content:flex-start}
+.android-note{margin-top:12px;font-size:14px;color:var(--muted)}
+
+/* The demo panel looks like the app. */
+.app{background:var(--card);border-radius:28px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(90,40,10,.35);overflow:hidden}
+.app-top{padding:18px 18px 14px;border-bottom:1px solid var(--line)}
+.app-top p{font:600 15px var(--body);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.app-top p small{font:500 13px var(--body);color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{appearance:none;border:1.5px solid var(--line2);background:var(--page);color:var(--ink);border-radius:99px;padding:9px 14px;
+  font:600 14.5px/1 var(--body);cursor:pointer;min-height:40px;transition:background .15s,border-color .15s,color .15s}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip[aria-pressed="true"]::before{content:"✓ ";color:var(--soft)}
+.app-body{padding:6px 18px 18px;max-height:none}
+.group{margin-top:16px}
+.group h3{display:flex;justify-content:space-between;align-items:baseline;font:800 20px/1.1 var(--display);letter-spacing:-.02em}
+.group h3 small{font:500 13px var(--body);color:var(--muted)}
+.res{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;margin-top:10px;padding:10px;border:1px solid var(--line);border-radius:18px;
+  border-left:4px solid var(--ok);animation:pop .3s ease}
+.res.almost{border-left-color:var(--accent)}
+.res.far{border-left-color:var(--line2)}
+.res img{width:64px;height:64px;border-radius:14px;object-fit:cover}
+.res b{font:700 16.5px/1.2 var(--body)}
+.res .is{display:block;font-size:13px;color:var(--accent-deep);font-weight:600}
+.bar{display:flex;align-items:center;gap:8px;margin-top:6px;font:600 12.5px var(--body);color:var(--muted);font-variant-numeric:tabular-nums}
+.bar i{flex:1;height:6px;border-radius:9px;background:var(--line)}
+.bar i::before{content:"";display:block;height:100%;width:var(--v);border-radius:9px;background:var(--ok);transition:width .3s}
+.almost .bar i::before{background:var(--accent)}
+.far .bar i::before{background:var(--soft)}
+.miss{grid-column:1/-1;font-size:13.5px;color:var(--muted);background:var(--flag);border-radius:12px;padding:8px 10px}
+.miss b{font-size:13.5px;color:var(--accent-deep)}
+@keyframes pop{from{opacity:0;transform:translateY(4px)}}
+.app-foot{margin:16px 18px 18px;display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:18px;background:var(--ink);color:#fff;
+  text-decoration:none;font:700 16px var(--body)}
+.app-foot small{font-weight:500;opacity:.7}
+.note{font-size:13px;color:var(--muted);text-align:center;padding:0 18px 16px}
+
+section{padding:72px 0}
+.head{max-width:640px;margin:0 auto 34px;text-align:center}
+h2{font:800 clamp(32px,7vw,52px)/1 var(--display);letter-spacing:-.04em;margin-top:6px;text-wrap:balance}
+.head p{color:var(--muted);margin-top:14px;font-size:18px}
+.pair{display:flex;justify-content:center;gap:14px}
+.pair .phone{--pw:min(220px,44vw)}
+.pair .phone:nth-child(2){margin-top:40px}
+.three{display:grid;gap:12px;margin-top:40px}
+.three div{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px}
+.three b{display:block;font:800 21px/1.15 var(--display);letter-spacing:-.02em;margin-top:6px}
+.three p{color:var(--muted);margin-top:6px;font-size:16px}
+
+.faq{max-width:760px;margin:0 auto;display:grid;gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 20px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font:600 17px/1.35 var(--body)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 18px;color:var(--muted)}
+.end{background:var(--accent);color:#fff;border-radius:32px;text-align:center;padding:56px 22px}
+.end .kick{color:#fff;opacity:.9}
+.end p{opacity:.9;margin:14px auto 24px}
+.end .badge.is-soon{background:transparent;border-color:rgba(255,255,255,.5)}
+.end .badge.is-soon .soon{background:#fff;color:var(--accent)}
+footer{padding:36px 0 110px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+
+@media (min-width:900px){
+  .hero{grid-template-columns:1fr 470px;align-items:start;gap:56px;padding-top:40px}
+  .hero-copy{position:sticky;top:40px}
+  .three{grid-template-columns:repeat(3,1fr)}
+  .pair .phone{--pw:250px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top"><img src="../assets/icon.png" alt="">Carecipe</a>
+    <span class="avatar" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b8917a" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="hero-copy">
+        <span class="kick">Good evening — dinner?</span>
+        <h1>What can I cook tonight?</h1>
+        <p class="sub">Tap what's in your kitchen and watch the dishes sort themselves. In the app, you just take a photo of your fridge.</p>
+        <div class="badges" data-hero-cta><a class="badge" data-store="ios" href="https://apps.apple.com/app/id6810801696"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<a class="badge" data-store="android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.5 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.9 8.6 3.3 1.9c.9.5.9 2.4 0 2.9l-3.3 1.9L13.5 12z"/><path fill="#00f076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12.1 6.8-3.4 3.4z"/><path fill="#f83548" d="m13.5 12 3.4 3.4-12.1 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span><em class="soon">Soon</em></a></div>
+        <p class="android-note">On Android? Carecipe is coming to Google Play soon.</p>
+      </div>
+
+      <div class="app" aria-label="Try it: pick your ingredients">
+        <div class="app-top">
+          <p><span id="count">10 ingredients captured</span><small>Tap to change</small></p>
+          <div class="chips" id="chips"></div>
+        </div>
+        <div class="app-body" id="results" aria-live="polite"></div>
+        <a class="app-foot" data-store="ios" href="https://apps.apple.com/app/id6810801696">Try it on your own fridge <small>· free</small></a>
+        <p class="note">This uses 11 real Carecipe recipes. The app searches all 1,322.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="head reveal"><span class="kick">In the app</span><h2>Point. Snap. Cook.</h2><p>Carecipe lists what it sees in your fridge, cupboard or shopping bag. You fix anything it got wrong, and the dishes line up.</p></div>
+      <div class="pair reveal">
+        <div class="phone"><img src="../assets/screens/06-pantry.jpg" alt="Scanning a pantry in Carecipe"></div>
+        <div class="phone"><img src="../assets/screens/03-results.jpg" alt="Dishes ranked by what you have"></div>
+      </div>
+      <div class="three">
+        <div class="reveal"><span class="kick">Ask in plain words</span><b>"Something with saltfish"</b><p>Or "Sunday lunch for six", or "quick, and the kids will eat it".</p></div>
+        <div class="reveal"><span class="kick">Missing something?</span><b>One tap to your list</b><p>Missing ingredients go onto one shopping list, sorted by aisle.</p></div>
+        <div class="reveal"><span class="kick">Save from anywhere</span><b>TikTok, Instagram, YouTube</b><p>Tap Share, then Carecipe. Your saved recipes join the suggestions too.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="head reveal"><h2>Questions</h2></div>
+      <div class="faq reveal">
+        <details><summary>Is Carecipe free?</summary><p>Yes. 200 recipes and 15 AI actions a month for scans, searches and imports. Carecipe Plus opens all 1,322 recipes and lifts the cap, with a 7-day free trial. Cancel any time.</p></details>
+        <details><summary>Does the fridge scan need to be perfect?</summary><p>No. Nothing needs to be exact. You can remove or add ingredients before it suggests anything.</p></details>
+        <details><summary>Do I need an account?</summary><p>No sign-up and no ads. Your recipes stay on your phone.</p></details>
+        <details><summary>Is it on Android?</summary><p>On iPhone now, and coming to Google Play soon.</p></details>
+      </div>
+    </section>
+
+    <section data-end-cta>
+      <div class="end reveal">
+        <span class="kick">Made for what you have</span>
+        <h2>Stop staring into the fridge</h2>
+        <p>1,322 Caribbean dishes from 22 islands. Free on iPhone.</p>
+        <div class="badges"><a class="badge" data-store="ios" href="https://apps.apple.com/app/id6810801696"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<a class="badge" data-store="android"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.5 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.9 8.6 3.3 1.9c.9.5.9 2.4 0 2.9l-3.3 1.9L13.5 12z"/><path fill="#00f076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12.1 6.8-3.4 3.4z"/><path fill="#f83548" d="m13.5 12 3.4 3.4-12.1 6.8c-.4.2-.9.2-1.2 0z"/></svg><span><small>Get it on</small><b>Google Play</b></span><em class="soon">Soon</em></a></div>
+      </div>
+    </section>
+  </main>
+  <footer>Carecipe by ForwardOnly LLC · <a href="../../privacy.html">Privacy</a> · <a href="../../terms.html">Terms</a> · <a href="mailto:carecipesupport@forwardonlyllc.com">Support</a></footer>
+</div>
+<div class="stickybar" aria-label="Download Carecipe">
+  <img src="../assets/icon.png" alt=""><p>Carecipe<small>Scan your fridge, free</small></p>
+  <a data-store="auto" href="https://apps.apple.com/app/id6810801696">Get</a>
+</div>
+<script src="../assets/store.js"></script>
+<script>
+// Ingredients from the real catalogue entries; salt, water, pepper and oil count as always in the cupboard.
+var DISHES = [
+  {img:'ackee', t:'Ackee & Saltfish', is:'Jamaica', m:40, ing:['saltfish','ackee','onion','sweet pepper','tomato','scallion','thyme','scotch bonnet']},
+  {img:'doubles', t:'Doubles', is:'Trinidad & Tobago', m:130, ing:['flour','turmeric','yeast','chickpeas','curry powder','garlic','green seasoning','onion','cumin']},
+  {img:'curry-goat', t:'Curry Goat', is:'Jamaica', m:175, ing:['goat','curry powder','onion','garlic','scotch bonnet','thyme','green seasoning','potato','allspice']},
+  {img:'escovitch', t:'Escovitch Fish', is:'Jamaica', m:45, ing:['snapper','onion','carrot','sweet pepper','scotch bonnet','vinegar','allspice','lime']},
+  {img:'oil-down', t:'Oil Down', is:'Grenada', m:90, ing:['breadfruit','salted pigtail','callaloo','coconut milk','onion','garlic','turmeric','scotch bonnet','thyme']},
+  {img:'rice-peas', t:'Rice & Peas', is:'Jamaica', m:55, ing:['rice','kidney beans','coconut milk','scallion','thyme','scotch bonnet','garlic','allspice']},
+  {img:'jerk-chicken', t:'Jerk Chicken', is:'Jamaica', m:80, ing:['chicken','scallion','scotch bonnet','garlic','allspice','brown sugar','soy sauce','thyme','nutmeg','cinnamon','lime']},
+  {img:'griot', t:'Griot', is:'Haiti', m:90, ing:['pork','sour orange','scotch bonnet','garlic','onion','bouillon']},
+  {img:'mofongo', t:'Mofongo', is:'Puerto Rico', m:50, ing:['plantain','garlic','chicharrones','broth','butter']},
+  {img:'pepperpot', t:'Pepperpot', is:'Guyana', m:260, ing:['beef','pig trotters','scotch bonnet','onion','garlic','cassareep','brown sugar','cinnamon','clove']},
+  {img:'bake-saltfish', t:'Bake & Saltfish', is:'Grenada', m:50, ing:['flour','baking powder','saltfish','onion','tomato','sweet pepper','scallion']}
+];
+var CHIPS = ['saltfish','ackee','onion','garlic','scotch bonnet','thyme','scallion','tomato','sweet pepper','allspice','flour','rice','kidney beans','coconut milk','chicken','plantain','lime','curry powder','chickpeas','goat','snapper','pork'];
+var have = new Set(['saltfish','ackee','onion','garlic','scotch bonnet','thyme','scallion','tomato','sweet pepper','allspice']);
+
+function mins(m){ return m < 60 ? m + ' min' : Math.floor(m/60) + ' h' + (m%60 ? ' ' + String(m%60).padStart(2,'0') : ''); }
+function esc(s){ return s.replace(/&/g,'&amp;'); }
+
+function renderChips(){
+  var box = document.getElementById('chips'); box.innerHTML = '';
+  CHIPS.forEach(function(c){
+    var b = document.createElement('button');
+    b.className = 'chip'; b.type = 'button'; b.textContent = c;
+    b.setAttribute('aria-pressed', have.has(c));
+    b.onclick = function(){ have.has(c) ? have.delete(c) : have.add(c); b.setAttribute('aria-pressed', have.has(c)); render(); };
+    box.appendChild(b);
+  });
+}
+
+function render(){
+  document.getElementById('count').textContent = have.size + ' ingredient' + (have.size === 1 ? '' : 's') + ' captured';
+  var ranked = DISHES.map(function(d){
+    var got = d.ing.filter(function(i){ return have.has(i); });
+    var miss = d.ing.filter(function(i){ return !have.has(i); });
+    return {d:d, got:got.length, miss:miss, cov:got.length / d.ing.length};
+  }).sort(function(a,b){ return a.miss.length - b.miss.length || b.cov - a.cov; });
+
+  var tiers = [
+    {k:'', name:'Cook it tonight', note:'you have what matters', f:function(r){ return r.miss.length === 0; }},
+    {k:'almost', name:'Almost there', note:'missing 1 or 2', f:function(r){ return r.miss.length > 0 && r.miss.length <= 2; }},
+    {k:'far', name:'One shop away', note:'missing 3 or more', f:function(r){ return r.miss.length > 2; }}
+  ];
+  var html = '', shown = 0;
+  tiers.forEach(function(t){
+    var rows = ranked.filter(t.f).slice(0, t.k === 'far' ? Math.max(0, 5 - shown) : 4);
+    if (!rows.length) return;
+    shown += rows.length;
+    html += '<div class="group"><h3>' + t.name + ' <small>' + t.note + '</small></h3>';
+    rows.forEach(function(r){
+      html += '<div class="res ' + t.k + '"><img src="../assets/dish/' + r.d.img + '.jpg" alt=""><div><b>' + esc(r.d.t) + '</b>' +
+        '<span class="is">' + esc(r.d.is) + ' · ' + mins(r.d.m) + '</span>' +
+        '<div class="bar"><i style="--v:' + Math.round(r.cov*100) + '%"></i>' + r.got + ' of ' + r.d.ing.length + '</div></div>' +
+        (r.miss.length && r.miss.length <= 4 ? '<p class="miss"><b>Needs</b> ' + r.miss.join(', ') + '</p>' : '') + '</div>';
+    });
+    html += '</div>';
+  });
+  document.getElementById('results').innerHTML = html;
+}
+renderChips(); render();
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 (function () {
   var LINKS = {
     ios: 'https://apps.apple.com/app/id6810801696',
-    android: ''
+    android: 'https://play.google.com/store/apps/details?id=com.carecipe.app'
   };
 
   // Label the click so App Store Connect can split installs by ad: ?ad=A on the
